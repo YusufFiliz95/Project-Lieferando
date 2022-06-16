@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--font-family: 'Roboto Slab';-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Economica:wght@700&family=Open+Sans:wght@300;600&family=Raleway:wght@100;200;300;400;500;600;800;900&family=Roboto+Slab:wght@100;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="img/png" href="img/logo-favicon.png">
+    <title>Food'n Chill</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Responsive Menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Javascript-Data -->
+    <script src="javascript/script.js"></script>
+    <script src="javascript/foods.js"></script>
+    <script src="javascript/checkout.js"></script>
+</head>
+
+
+<body onload="onload()">
+    <!-- header section -->
+    <div w3-include-html="templates/header.html"></div>
+
+    <div class="overview">
+        <div class="food-section">
+            <div class="food-section-image">
+                <div class="food-section-logo">
+                    <img src="img/pizza-time.png">
+                </div>
+                <img src="img/title-img.jpg" class="title-img">
+            </div>
+            <div class="restaurant-info-section">
+                <div class="restaurant-info">
+                    <div class="retaurant-info-title">
+                        <h1>Pizza Time</h1>
+                        <div class="review">
+                            <div class="review-stars">
+                                <img src="img/review-star.png">
+                                <img src="img/review-star.png">
+                                <img src="img/review-star.png">
+                                <img src="img/review-star.png">
+                                <img src="img/review-halfstar.png">
+                            </div>
+                            <span>(718 Bewertungen)</span>
+                        </div>
+                        <div class="delivery-information">
+                            <div class="delivery-info-1">
+                                <img src="img/time.png">
+                                <span>20-30 min.</span>
+                            </div>
+                            <div class="delivery-info-2">
+                                <img src="img/bike.png">
+                                <span>5.00 CHF</span>
+                            </div>
+                            <div class="delivery-info-3">
+                                <img src="img/cart.png">
+                                <span>Mind. CHF 30.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-fav-buttons">
+                        <div class="info-button" onclick="pizzaTime()" title="pizza time :)">
+                            <img src="img/info.png">
+                        </div>
+                        <div class="fav-button" onclick="favoriteButton()" id="favButton"
+                            title="zu Favoriten hinzufügen">
+                            <img src="img/favorite-before-clicking.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FOOD SELECTION SECTION-->
+            <div class="food-selection-section">
+                <nav class="food-selection" id="foodSelection">
+                    <span class="width">Beliebte Gerichte</span>
+                </nav>
+            </div>
+            <div class="foods-section">
+                <div class="foods">
+                    <!--POPULAR FOOD SECTION-->
+                    <span class="food-headline">Bliebte Gerichte</span>
+                </div>
+                <div class="food-menu" id="favFood"></div>
+                <!--PIZZA SECTION-->
+                <img src="img/title-img.jpg" class="food-image">
+                <div class="foods">
+                    <span class="food-headline">Pizza</span>
+                    <span class="description">Alle Pizzen werden mit Tomatensauce und Mozzarella zubereitet. - Wahl aus:
+                        Ø 24cm, Ø 28cm, Ø 32cm</span>
+                </div>
+                <div class="food-menu" id="pizza"></div>
+                <!--PASTA SECTION-->
+                <img src="img/pasta.jpg" class="food-image">
+                <div class="foods">
+                    <span class="food-headline">Pasta</span>
+                </div>
+                <div class="food-menu" id="pasta"></div>
+                <!--SALAD SECTION-->
+                <img src="img/salat.jpg" class="food-image">
+                <div class="foods">
+                    <span class="food-headline">Salate</span>
+                    <span class="description">Alle Salate werden mit Mix-Salat, Tomaten, Gurken und Dressing nach Wahl
+                        zubereitet.</span>
+                </div>
+                <div class="food-menu" id="salad"></div>
+                <!--DRINK SECTION-->
+                <img src="img/getränke.jpg" class="food-image">
+                <div class="foods">
+                    <span class="food-headline">Getränke</span>
+                </div>
+                <div class="food-menu" id="drinks"></div>
+                <!--DESSERT SECTION-->
+                <img src="img/desserts.jpg" class="food-image">
+                <div class="foods">
+                    <span class="food-headline">Desserts</span>
+                </div>
+                <div class="food-menu" id="desserts"></div>
+            </div>
+        </div>
+        <!--CHECKOUT SECTION-->
+        <div class="checkout-section" onclick="hideCheckoutOverviewResponsive()" id="checkoutSection">
+            <div class="checkout sticky" onclick="doNotClose(event)" id="checkoutSticky">
+                <div class="close-button d-none" id="closeCheckoutButton"><div class="X-button d-none" id="xBtn" onclick="hideCheckoutOverviewResponsive()"><img src="img/close-btn.png"></div></div>
+                <div class="checkout-headline">
+                    <span>Warenkorb</span>
+                </div>
+                <div class="checkout-menu" id="checkoutMenu"></div>
+            </div>
+        </div>
+    </div>
+    <!--CHECKOUT RESPONSIVE SECTION-->
+    <div class="checkout-responsive-section d-flex" id="responsiveCheckoutSection">
+        <div class="checkout-responsive-button d-flex" onclick="showCheckoutOverviewResponsive()">
+            <div class="checkoutMobileBtn d-flex-around">
+                <div class="d-flex mobileMarginRight">
+                    <img class="mobileBag" src="img/bag-white.png">
+                    <div id="itemsInCheckout" class="items-in-checkout d-flex">0</div>
+                </div class="mobileMarginLeft">
+                <span>WARENKORB</span> 
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
